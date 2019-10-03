@@ -4,7 +4,11 @@
 
 // SOLUTION
 
+// iterative solution:
 l=n=>{while(n>=0)console.log(n--||'Liftoff!')}
+
+// recursive solution:
+l=n=>{(console.log(n>0?n:'Liftoff!'),n&&l(n - 1))}
 
 // TEST CASES
 
@@ -15,7 +19,23 @@ const func = l;
 const lowestTest = 0 || 0;
 const highestTest = 0 || Infinity;
 
-// NOTE... these tests won't work because the problem asks for console.log instead of returns! will have to fix this at some point
+// NOTE... these tests won't work because the problem asks for console.log instead of returns! will have to fix this at some point.
+// in the meantime here are some pseudo tests:
+
+l(5)
+// 5
+// 4
+// 3
+// 2
+// 1
+// 'Liftoff!'
+
+l(1)
+// 1
+// 'Liftoff!'
+
+l(0)
+// 'Liftoff!'
 
 // // Test case 1
 // input = {
