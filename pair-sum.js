@@ -5,7 +5,15 @@
 // SOLUTION
 
 // naive O(n^2) solution:
-p=(a,t)=>a.some((e,i,s)=>s.slice(i+1).includes(t-e))
+//p=(a,t)=>a.some((e,i,s)=>s.slice(i+1).includes(t-e))
+
+// optimized O(n) time O(n) space solution:
+//p=(a,t,i=0,m={})=>m[a[i]]||!(m[t-a[i]]=!0)||(i===a.length?!9:p(a,t,i+1,m))
+
+// optimized O(n) time (array must be sorted) solution:
+p=(a,t,l=0,r=a.length-1)=>l>=r?!9:a[l]+a[r]===t||p(a,t,...a[l]+a[r]<t?[l+1,r]:[l,r-1])
+
+// p(a,t,...(a[l]+a[r]<t?[l+1,r]:[l,r-1]))
 
 // TEST CASES
 
